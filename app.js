@@ -24,7 +24,7 @@ const transporter = require('./nodemailer-config'); //  Nodemailer configuration
 const app = express();
 app.set('views', path.join(__dirname, 'views'));
 
-const recaptchaSiteKey = '6Lfkp5MoAAAAADZFTt6gTxwbuwyS-uZG9Vqud7dZ';
+const recaptchaSiteKey = '6Lenra8oAAAAAONbhvHO1Rp7wvWRVm1hRLL13t1y';
 
 // MongoDB connection
 mongoose.connect('mongodb://127.0.0.1:27017/nodeproject', {
@@ -70,7 +70,7 @@ passport.deserializeUser(async (id, done) => {
 
 // Routes
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/home.html');
+    res.redirect('/login');
   });
 
   //const secretKey = '6Lfkp5MoAAAAAB71Hzi4w8YkWvHG5dhTRqrabdee';
@@ -83,7 +83,7 @@ app.post('/register', async (req, res) => {
   const { username, password, 'g-recaptcha-response': recaptchaToken } = req.body;
 
   // Verify reCAPTCHA response
-  const secretKey = '6Lfkp5MoAAAAAB71Hzi4w8YkWvHG5dhTRqrabdee'; // Replace with your reCAPTCHA secret key
+  const secretKey = '6Lenra8oAAAAALuJBzUBOwgIaxbiySokgq2ILgt9'; //  reCAPTCHA secret key
   const verificationURL = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${recaptchaToken}`;
   
   
@@ -113,7 +113,7 @@ app.post('/login', async (req, res) => {
   const { username, password, 'g-recaptcha-response': recaptchaToken } = req.body;
 
   // Verify reCAPTCHA response
-  const secretKey = '6Lfkp5MoAAAAAB71Hzi4w8YkWvHG5dhTRqrabdee'; // Replace with your reCAPTCHA secret key
+  const secretKey = '6Lenra8oAAAAALuJBzUBOwgIaxbiySokgq2ILgt9'; // reCAPTCHA secret key
   const verificationURL = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${recaptchaToken}`;
 
   try {

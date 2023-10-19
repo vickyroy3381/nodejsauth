@@ -24,7 +24,7 @@ const transporter = require('./nodemailer-config'); //  Nodemailer configuration
 const app = express();
 app.set('views', path.join(__dirname, 'views'));
 
-const recaptchaSiteKey = '6Lenra8oAAAAAONbhvHO1Rp7wvWRVm1hRLL13t1y';
+const recaptchaSiteKey = '6Lfkp5MoAAAAADZFTt6gTxwbuwyS-uZG9Vqud7dZ';
 
 // MongoDB connection
 mongoose.connect('mongodb://127.0.0.1:27017/nodeproject', {

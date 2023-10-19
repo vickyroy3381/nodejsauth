@@ -83,7 +83,7 @@ app.post('/register', async (req, res) => {
   const { username, password, 'g-recaptcha-response': recaptchaToken } = req.body;
 
   // Verify reCAPTCHA response
-  const secretKey = '6Lenra8oAAAAALuJBzUBOwgIaxbiySokgq2ILgt9'; //  reCAPTCHA secret key
+  const secretKey = '6Lfkp5MoAAAAAB71Hzi4w8YkWvHG5dhTRqrabdee'; //  reCAPTCHA secret key
   const verificationURL = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${recaptchaToken}`;
   
   
@@ -113,7 +113,7 @@ app.post('/login', async (req, res) => {
   const { username, password, 'g-recaptcha-response': recaptchaToken } = req.body;
 
   // Verify reCAPTCHA response
-  const secretKey = '6Lenra8oAAAAALuJBzUBOwgIaxbiySokgq2ILgt9'; // reCAPTCHA secret key
+  const secretKey = '6Lfkp5MoAAAAAB71Hzi4w8YkWvHG5dhTRqrabdee'; // reCAPTCHA secret key
   const verificationURL = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${recaptchaToken}`;
 
   try {

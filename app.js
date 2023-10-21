@@ -31,6 +31,9 @@ mongoose.connect('mongodb://127.0.0.1:27017/nodeproject', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
+}).catch(err => {
+  console.error('MongoDB connection error:', err);
+});
 
 // Express middlewares
 app.use(bodyParser.urlencoded({ extended: true }));

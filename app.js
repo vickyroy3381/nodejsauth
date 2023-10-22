@@ -105,16 +105,6 @@ app.post('/register', async (req, res) => {
             console.error(err);
             res.status(500).send('Internal Server Error');
           });
-        } else {
-          // Handle the case where reCAPTCHA verification fails
-          res.status(400).send('reCAPTCHA verification failed');
-        }
-      } catch (error) {
-        console.error(error);
-        // Handle other potential errors (e.g., network issues)
-        res.status(500).send('An error occurred');
-      }
-        
       });
 
 

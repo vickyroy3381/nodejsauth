@@ -9,8 +9,8 @@ const GoogleStrategy = require ('passport-google-oauth2').Strategy;
 passport.use (
   new GoogleStrategy (
     {
-      clientID: '7721274803-0ne13d4l0ftj6jadbplvamq1p53cn2uh.apps.googleusercontent.com',
-      clientSecret: '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',
+      clientID: '184247123083-b2uhgd7ffi4lekg02fsih81hveqns8a8.apps.googleusercontent.com',
+      clientSecret: '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',
       callbackURL: 'https://nodejsauth-navjot.onrender.com/auth/google/callback',//http://localhost:5000/auth/google/callback
       passReqToCallback: true,
     },

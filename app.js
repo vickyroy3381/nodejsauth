@@ -27,9 +27,9 @@ app.set('views', path.join(__dirname, 'views'));
 const recaptchaSiteKey = '6Lf3mLooAAAAAFHSDTfaQx3jaSWb4_yBC3fsCE9Z';
 
 // MongoDB connection
-//mongoose.connect("mongodb://localhost:27017/Issue-Tracker");
+
 //mongoose.connect('mongodb://127.0.0.1:27017/nodeproject');
-mongoose.connect('mongodb://localhost:27017/nodeproject', {
+mongoose.connect('mongodb+srv://vickyjsauth:PZxeE0vvWdbZn9fw@mymongodb.mecwaj1.mongodb.net/mymongodb?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 }).catch(err => {
@@ -87,7 +87,7 @@ app.post('/register', async (req, res) => {
   const { username, password, 'g-recaptcha-response': recaptchaToken } = req.body;
 
   // Verify reCAPTCHA response
-  const secretKey = '6Lf3mLooAAAAAC1O5S1JplYVukM2Wgir_gE-YmDy'; //  reCAPTCHA secret key
+  const secretKey = '6Lfms88oAAAAACJpb__0N22L2uZNwaJelPud1qKP'; //  reCAPTCHA secret key
   const verificationURL = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${recaptchaToken}`;
   
   
@@ -116,7 +116,7 @@ app.post('/login', async (req, res) => {
   const { username, password, 'g-recaptcha-response': recaptchaToken } = req.body;
 
   // Verify reCAPTCHA response
-  const secretKey = '6Lf3mLooAAAAAC1O5S1JplYVukM2Wgir_gE-YmDy'; // reCAPTCHA secret key
+  const secretKey = '6Lfms88oAAAAACJpb__0N22L2uZNwaJelPud1qKP'; // reCAPTCHA secret key
   const verificationURL = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${recaptchaToken}`;
 
   try {
@@ -246,7 +246,7 @@ app.get('/logout', (req, res) => {
         }
   
     // Send the reset password link via username
-    const resetLink = `http://localhost:3000/reset-password/${user._id}/${token.token}`;
+    const resetLink = `https://nodejsauth-navjot.onrender.com/reset-password/${user._id}/${token.token}`;
     const mailOptions = {
       from:'venkatanagireddy3381@gmail.com',
       to: username,

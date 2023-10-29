@@ -231,7 +231,7 @@ app.get('/logout', (req, res) => {
   
     if (!user) {
       // Handle the case where the username address is not found
-      return res.status(404).send('username not found');
+      return res.status(404).send('email not found');
     }
   
     // Generate a random token
@@ -260,7 +260,7 @@ app.get('/logout', (req, res) => {
         return res.status(500).send('Error sending username');
       }
       console.log(`username sent: ${info.response}`);
-      res.status(200).send('Password reset username sent');
+      res.status(200).send('Password reset email sent');
     });
   });
 
@@ -305,7 +305,7 @@ app.get('/logout', (req, res) => {
       // Check if the token is valid and not expired
      
       const user = await User.findById(req.params.userId);
-      if (!user) return res.status(400).send("invalid link or expired aaaaaaaaa...");
+      if (!user) return res.status(400).send("invalid link or expired ");
       const token_rec = await Token.findOne({
         userId: user._id,
         token: token,
